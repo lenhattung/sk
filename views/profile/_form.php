@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\Profile */
 /* @var $form yii\widgets\ActiveForm */
 
-$rels = \yii\helpers\ArrayHelper::map(\app\models\Relationship::findAll(), 'id', 'name')
+$rels = \yii\helpers\ArrayHelper::map((\app\models\Relationship::find()->all()), 'id', 'name');
 
 ?>
 <style>

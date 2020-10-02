@@ -10,7 +10,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
-use yii\imagine\Image;
+use yii\imagine\BaseImage;
 
 /**
  * ProfileController implements the CRUD actions for Profile model.
@@ -81,7 +81,7 @@ class ProfileController extends Controller
                 if (isset($file)) {
                     $name = $model->userid.'_'.sha1($model->userid).'_'.sha1('round(microtime(true) * 1000)').'_'.$model->id;
                     $model->avatar = '/upload/profile/' . $name . '.' . $file->extension;
-                    Image::thumbnail($model->avatar, 400, 400)
+                    BaseImage::thumbnail($model->avatar, 400, 400)
                         ->resize(new Box(400,400))
                         ->save($model->avatar,
                             ['quality' => 70]);

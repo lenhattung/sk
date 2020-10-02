@@ -99,5 +99,13 @@ return [
     'Relationship'=>'Relacje rodzinne',
     'Full name'=>'Họ và tên',
     'Avatar'=>'Hình đại diện',
-
+    'Yourself'=>'Siebie',
+    'Child'=>'Dziecko',
+    'Dad'=>'Tata',
+    'Grandfather'=>'Dziadek',
+    'Grandmother'=>'Babcia',
+    'Husband'=>'Mąż',
+    'Mom'=>'Matka',
+    'Other'=>'Inne',
+    'Wife'=>'Żona',
 ];

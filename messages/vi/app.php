@@ -101,4 +101,13 @@ return [
     'Relationship'=>'Quan hệ gia đình',
     'Full name'=>'Họ và tên',
     'Avatar'=>'Hình đại diện',
+    'Yourself'=>'Bản thân',
+    'Child'=>'Con',
+    'Dad'=>'Bố',
+    'Grandfather'=>'Ông',
+    'Grandmother'=>'Bà',
+    'Husband'=>'Chồng',
+    'Mom'=>'Mẹ',
+    'Other'=>'Khác',
+    'Wife'=>'Vợ',
 ];

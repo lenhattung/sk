@@ -8,7 +8,9 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 
 $rels = \yii\helpers\ArrayHelper::map((\app\models\Relationship::find()->orderBy('index')->all()), 'id', 'name');
-
+foreach ($rels as $key => $value) {
+    $rels[$key] = Yii::t('app', $value);
+}
 ?>
 <style>
     h1:first-of-type {

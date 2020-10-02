@@ -10,7 +10,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
-use Faker\Provider\Image;
+use yii\imagine\Image;
 
 /**
  * ProfileController implements the CRUD actions for Profile model.

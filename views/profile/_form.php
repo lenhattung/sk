@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
+use kartik\widgets\FileInput;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Profile */
@@ -19,7 +20,9 @@ foreach ($rels as $key => $value) {
 </style>
 <div class="profile-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+        'options' => ['enctype'=>'multipart/form-data'],
+    ]); ?>
 
     <!--
     <?= $form->field($model, 'userid')->textInput() ?>

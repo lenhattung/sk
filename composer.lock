@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66b5a344af0c89edfa0309528872cea9",
+    "content-hash": "6642ad4edaedab088fdfbd173b8c1d71",
     "packages": [
         {
             "name": "2amigos/yii2-arrayquery-component",
@@ -6760,7 +6760,8 @@
         "cetver/yii2-language-selector": 20,
         "codemix/yii2-localeurls": 20,
         "yiisoft/yii2-jui": 20,
-        "kartik-v/yii2-nav-x": 20
+        "kartik-v/yii2-nav-x": 20,
+        "kartik-v/yii2-widget-fileinput": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

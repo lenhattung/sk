@@ -9,6 +9,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ProfileController implements the CRUD actions for Profile model.
@@ -69,8 +70,26 @@ class ProfileController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->userid = \Yii::$app->user->identity->getId();
-            if($model->save())
-            return $this->redirect(['view', 'id' => $model->id]);
+            $model->codeAactiveMobileSMS = UserController::get6OTP();
+            $model->codeActiveEmail = UserController::get6OTP();
+            $model->activeStatus = "1";
+
+            if($model->save()) {
+                $model->refresh();
+                $file = UploadedFile::getInstance($model, 'avatar');
+                if (isset($file)) {
+                    $name = $model->userid.'_'.sha1($model->userid).'_'.sha1('round(microtime(true) * 1000)').'_'.$model->id;
+                    $model->avatar = '/upload/profile/' . $name . '.' . $file->extension;
+                    Image::thumbnail($model->avatar, 400, 400)
+                        ->resize(new Box(400,400))
+                        ->save($model->avatar,
+                            ['quality' => 70]);
+                }
+
+                $model->save();
+                return $this->redirect(['view', 'id' => $model->id]);
+
+            }
         }
 
         return $this->render('create', [

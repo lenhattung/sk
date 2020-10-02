@@ -24,7 +24,8 @@
         "cetver/yii2-language-selector": "dev-master",
         "codemix/yii2-localeurls": "dev-master",
         "yiisoft/yii2-jui": "^2.0@dev",
-        "kartik-v/yii2-nav-x": "dev-master"
+        "kartik-v/yii2-nav-x": "dev-master",
+        "kartik-v/yii2-widget-fileinput": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

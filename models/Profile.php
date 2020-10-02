@@ -43,8 +43,8 @@ class Profile extends \yii\db\ActiveRecord
             [['userid'], 'integer'],
             [['dateOfBirth'], 'safe'],
             [['fullName', 'email', 'note'], 'string', 'max' => 255],
+            [['avatar'], 'file', 'types'=>'jpg,jpeg,gif,png', 'maxSize'=>1024*1024],
             [['gender', 'mobilePhone', 'codeAactiveMobileSMS', 'activeMobileSMS', 'codeActiveEmail', 'activeEmail', 'activeStatus', 'language', 'relationship'], 'string', 'max' => 50],
-            [['avatar'], 'string', 'max' => 512],
         ];
     }
 

@@ -52,7 +52,7 @@ use yii\widgets\ActiveForm;
 
     -->
 
-    <div class="form-group">
+    <div class="form-group text-center">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
     </div>
 

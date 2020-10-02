@@ -32,9 +32,9 @@ foreach ($rels as $key => $value) {
 
     <?= $form->field($model, 'fullName')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'avatar')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'avatar')->fileInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'dateOfBirth')->textInput() ?>
+    <?= $form->field($model, 'dateOfBirth')->textInput(['maxlength' => true, 'type'=>'date']) ?>
 
     <?= $form->field($model, 'gender')->textInput(['maxlength' => true]) ?>
 

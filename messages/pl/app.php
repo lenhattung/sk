@@ -95,4 +95,9 @@ return [
     'New password' => 'Nowe hasło',
     'Repeat new password' => 'Powtórz nowe hasło',
 
+    //Profile
+    'Relationship'=>'Relacje rodzinne',
+    'Full name'=>'Họ và tên',
+    'Avatar'=>'Hình đại diện',
+
 ];

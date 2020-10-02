@@ -96,4 +96,9 @@ return [
     'Old password' => 'Mật khẩu cũ',
     'New password' => 'Mật khẩu mới',
     'Repeat new password' => 'Nhập lại mật khẩu mới',
+
+    //Profile
+    'Relationship'=>'Quan hệ gia đình',
+    'Full name'=>'Họ và tên',
+    'Avatar'=>'Hình đại diện',
 ];

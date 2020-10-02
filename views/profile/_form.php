@@ -6,6 +6,9 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\Profile */
 /* @var $form yii\widgets\ActiveForm */
+
+$rels = ArrayHelper::map(\app\models\Relationship::findAll(), 'id', 'name')
+
 ?>
 <style>
     h1:first-of-type {
@@ -20,7 +23,10 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'userid')->textInput() ?>
     -->
 
-    <?= $form->field($model, 'relationship')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'relationship')->dropDownList(
+        $rels,
+        ['prompt'=>'']
+    )->label(''); ?>
 
     <?= $form->field($model, 'fullName')->textInput(['maxlength' => true]) ?>
 

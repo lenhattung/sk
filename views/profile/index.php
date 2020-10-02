@@ -29,11 +29,11 @@ $h = Url::base(true);
                 <?= GridView::widget([
                     'dataProvider' => $dataProvider,
                     'columns' => [
-                        ['class' => 'yii\grid\SerialColumn'],
+//                        ['class' => 'yii\grid\SerialColumn'],
 
                         'fullName',
 
-                        ['class' => 'yii\grid\ActionColumn'],
+//                        ['class' => 'yii\grid\ActionColumn'],
                     ],
                 ]); ?>
 

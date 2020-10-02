@@ -7,7 +7,11 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\Profile */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<style>
+    h1:first-of-type {
+        display: none;
+    }
+</style>
 <div class="profile-form">
 
     <?php $form = ActiveForm::begin(); ?>

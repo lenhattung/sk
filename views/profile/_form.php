@@ -51,9 +51,10 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'language')->textInput(['maxlength' => true]) ?>
 
     -->
-
-    <div class="form-group text-center">
+    <div class="center-block">
+    <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+    </div>
     </div>
 
     <?php ActiveForm::end(); ?>

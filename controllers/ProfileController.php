@@ -38,7 +38,7 @@ class ProfileController extends Controller
     {
         $searchModel = new ProfileSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider->query->andWhere(['=', 'userid', Yii::$app->user->id]);
+        $dataProvider->query->andWhere(['=', 'userid', \Yii::$app->user->identity->getId()]);
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

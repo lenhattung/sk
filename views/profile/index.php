@@ -25,8 +25,20 @@ $h = Url::base(true);
             <?php
             } else {
             ?>
+                <?php Pjax::begin(); ?>
+                <?= GridView::widget([
+                    'dataProvider' => $dataProvider,
+                    'filterModel' => $searchModel,
+                    'columns' => [
+                        ['class' => 'yii\grid\SerialColumn'],
 
+                        'fullName',
 
+                        ['class' => 'yii\grid\ActionColumn'],
+                    ],
+                ]); ?>
+
+                <?php Pjax::end(); ?>
             <?php
 
             }

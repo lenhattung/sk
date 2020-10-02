@@ -28,7 +28,7 @@ foreach ($rels as $key => $value) {
     <?= $form->field($model, 'relationship')->dropDownList(
         $rels,
         ['prompt'=>'']
-    )->label(''); ?>
+    )?>
 
     <?= $form->field($model, 'fullName')->textInput(['maxlength' => true]) ?>
 

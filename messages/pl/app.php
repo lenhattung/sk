@@ -97,8 +97,8 @@ return [
 
     //Profile
     'Relationship'=>'Relacje rodzinne',
-    'Full name'=>'Họ và tên',
-    'Avatar'=>'Hình đại diện',
+    'Full name'=>'Imię i nazwisko',
+    'Avatar'=>'Awatara',
     'Yourself'=>'Siebie',
     'Child'=>'Dziecko',
     'Dad'=>'Tata',

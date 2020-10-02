@@ -97,7 +97,7 @@ return [
 
     //Profile
     'Relationship'=>'Relacje rodzinne',
-    'Full name'=>'Imię i nazwisko',
+    'Full Name'=>'Imię i nazwisko',
     'Avatar'=>'Awatara',
     'Yourself'=>'Siebie',
     'Child'=>'Dziecko',

@@ -99,7 +99,7 @@ return [
 
     //Profile
     'Relationship'=>'Quan hệ gia đình',
-    'Full name'=>'Họ và tên',
+    'Full Name'=>'Họ và tên',
     'Avatar'=>'Hình đại diện',
     'Yourself'=>'Bản thân',
     'Child'=>'Con',

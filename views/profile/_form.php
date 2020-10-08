@@ -3,15 +3,22 @@
 use yii\helpers\Html;
 use kartik\widgets\ActiveForm;
 use kartik\widgets\FileInput;
+use \yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Profile */
 /* @var $form yii\widgets\ActiveForm */
 
-$rels = \yii\helpers\ArrayHelper::map((\app\models\Relationship::find()->orderBy('index')->all()), 'id', 'name');
+$rels = ArrayHelper::map((\app\models\Relationship::find()->orderBy('index')->all()), 'id', 'name');
 foreach ($rels as $key => $value) {
     $rels[$key] = Yii::t('app', $value);
 }
+
+$genders =ArrayHelper::map((\app\models\Gender::find()->all()), 'id', 'name');
+foreach ($genders as $key => $value) {
+    $genders[$key] = Yii::t('app', $value);
+}
+
 ?>
 <style>
     h1:first-of-type {
@@ -39,7 +46,10 @@ foreach ($rels as $key => $value) {
 
     <?= $form->field($model, 'dateOfBirth')->textInput(['maxlength' => true, 'type'=>'date']) ?>
 
-    <?= $form->field($model, 'gender')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'gender')->dropDownList(
+        $genders,
+        ['prompt'=>'']
+    )?>
 
     <?= $form->field($model, 'mobilePhone')->textInput(['maxlength' => true]) ?>
 

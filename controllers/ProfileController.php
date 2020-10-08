@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\User;
 use Yii;
 use app\models\Profile;
 use app\models\ProfileSearch;
@@ -10,7 +11,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
-use yii\imagine\BaseImage;
+use yii\imagine\Image;
+use Imagine\Image\Box;
 
 /**
  * ProfileController implements the CRUD actions for Profile model.
@@ -55,9 +57,16 @@ class ProfileController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        $model = $this->findModel($id);
+        if($model->userid!=\Yii::$app->user->identity->getId()) $model=null;
+        if(isset($model))
+            return $this->render('view', [
+                'model' => $model,
+            ]);
+        else {
+            $this->layout='error';
+            echo Yii::t('app', 'You do not have permission to access this content!');
+        }
     }
 
     /**
@@ -80,16 +89,14 @@ class ProfileController extends Controller
                 $file = UploadedFile::getInstance($model, 'avatar');
                 if (isset($file)) {
                     $name = $model->userid.'_'.sha1($model->userid).'_'.sha1('round(microtime(true) * 1000)').'_'.$model->id;
-                    $model->avatar = '/upload/profile/' . $name . '.' . $file->extension;
-                    BaseImage::thumbnail($model->avatar, 400, 400)
-                        ->resize(new Box(400,400))
-                        ->save($model->avatar,
-                            ['quality' => 70]);
+                    $file->saveAs( 'upload/profile/avatar/'.$name.'.'.$file->extension );
+                    $model->avatar =  $name.'.'.$file->extension;
+                    $imagine = Image::getImagine();
+                    $image = $imagine->open('upload/profile/avatar/'.$model->avatar);
+                    $image->resize(new Box(300, 300))->save('upload/profile/avatar/'.$model->avatar, ['quality' => 70]);
                 }
-
                 $model->save();
                 return $this->redirect(['view', 'id' => $model->id]);
-
             }
         }
 
@@ -108,9 +115,24 @@ class ProfileController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $model1 = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->avatar=$model1->avatar;
+            if($model->save()) {
+                $model->refresh();
+                $file = UploadedFile::getInstance($model, 'avatar');
+                if (isset($file)&&strlen($file->baseName)>0) {
+                    $name = $model->userid.'_'.sha1($model->userid).'_'.sha1('round(microtime(true) * 1000)').'_'.$model->id;
+                    $file->saveAs( 'upload/profile/avatar/'.$name.'.'.$file->extension );
+                    $model->avatar =  $name.'.'.$file->extension;
+                    $imagine = Image::getImagine();
+                    $image = $imagine->open('upload/profile/avatar/'.$model->avatar);
+                    $image->resize(new Box(300, 300))->save('upload/profile/avatar/'.$model->avatar, ['quality' => 70]);
+                }
+                $model->save();
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('update', [

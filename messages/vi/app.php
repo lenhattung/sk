@@ -1,6 +1,13 @@
 <?php
 
 return [
+    // General
+    'Update'=>'Chỉnh sửa',
+    'Delete'=>'Xóa',
+    'Add'=>'Thêm',
+    'You do not have permission to access this content!'=>'Bạn không thể truy cập nội dung này!',
+    'Are you sure you want to delete this item?'=>'Bạn có chắc chắn xóa bỏ mục này không?',
+
     // Layout
     'Home page'=>'Trang chủ',
     'About'=>'Giới thiệu',
@@ -110,4 +117,6 @@ return [
     'Mom'=>'Mẹ',
     'Other'=>'Khác',
     'Wife'=>'Vợ',
+    'Male'=>'Nam',
+    'Female'=>'Nữ',
 ];

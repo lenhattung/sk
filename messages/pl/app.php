@@ -1,6 +1,13 @@
 <?php
 
 return [
+    // General
+    'Update'=>'Aktualizacja',
+    'Delete'=>'Kasowaj',
+    'Add'=>'Dodaj',
+    'You do not have permission to access this content!'=>'Nie masz pozwolenia na dostęp do tych treści!',
+    'Are you sure you want to delete this item?'=>'Czy na pewno chcesz usunąć ten element?',
+
     // Layout
     'Home page'=>'Strona główna',
     'About'=>'Wprowadzenie',
@@ -108,4 +115,6 @@ return [
     'Mom'=>'Matka',
     'Other'=>'Inne',
     'Wife'=>'Żona',
+    'Male'=>'Męski',
+    'Female'=>'Płeć żeńska',
 ];

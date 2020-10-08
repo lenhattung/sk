@@ -48,7 +48,6 @@ AppAsset::register($this);
 //        'options' => ['encode' => false],
 //    ]);
 
-
     NavBar::begin([
         'brandLabel' => '<span class="glyphicon glyphicon-leaf"></span> ' . Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,

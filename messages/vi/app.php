@@ -119,4 +119,18 @@ return [
     'Wife'=>'Vợ',
     'Male'=>'Nam',
     'Female'=>'Nữ',
+
+    // Health Monitoring
+    'Beats per minute'=>'Nhịp tim',
+    'Blood group'=>'Nhóm máu',
+    'Blood pressure'=>'Huyết áp',
+    'Blood sugar'=>'Đường huyết',
+    'Cholesterol HDL'=>'Cholesterol HDL',
+    'Cholesterol DHL'=>'Cholesterol DHL',
+    'Height'=>'Chiều cao',
+    'Waist'=>'Vòng eo',
+    'Weight'=>'Cân nặng',
+    'Temperature'=>'Nhiệt độ',
+    'Select profile to monitor health'=>'Lựa chọn hồ sơ để theo dõi sức khỏe',
+
 ];

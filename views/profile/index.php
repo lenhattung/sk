@@ -28,10 +28,22 @@ $h = Url::base(true);
                 <?php Pjax::begin(); ?>
                 <?= GridView::widget([
                     'dataProvider' => $dataProvider,
+                    'showHeader'=> false,
                     'columns' => [
 //                        ['class' => 'yii\grid\SerialColumn'],
 
-                        'fullName',
+                        [
+                                'attribute'=>'fullname',
+                                'format'=>'raw',
+                                'value'=>function($model){
+                                    $content = "";
+                                    if(strlen($model->avatar)>0)
+                                        $content = HTMl::img(Url::base(true).'/upload/profile/avatar/'.$model->avatar, ['width'=>'100px', 'height'=>'100px']).'<br/>'.$model->fullName;
+                                    else
+                                        $content = $model->fullName;
+                                    return "<center><a href='".Url::base(true).'/profile/view?id='.$model->id."'>".$content."</a></center>";
+                                }
+                        ]
 
 //                        ['class' => 'yii\grid\ActionColumn'],
                     ],

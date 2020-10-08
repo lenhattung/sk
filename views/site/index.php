@@ -29,7 +29,7 @@ $h = Url::base();
             <div class="body-content" style="padding-left: 5px; padding-right: 5px; padding-top: 5px; text-align: left ">
                 <div class="row">
                     <div class="col-lg-4" style="padding-top: 10px">
-                        <a class="btn btn-block btn-default" href="#"><h4 class="text-primary text-left"><span class="text-success glyphicon glyphicon-scale"></span> <?=Yii::t('app',  'Health monitoring')?></h4></a>
+                        <a class="btn btn-block btn-default" href="<?=$h?>/health-monitoring"><h4 class="text-primary text-left"><span class="text-success glyphicon glyphicon-scale"></span> <?=Yii::t('app',  'Health monitoring')?></h4></a>
                     </div>
 
                     <div class="col-lg-4" style="padding-top: 10px">

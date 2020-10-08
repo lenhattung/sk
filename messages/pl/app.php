@@ -117,4 +117,17 @@ return [
     'Wife'=>'Żona',
     'Male'=>'Męski',
     'Female'=>'Płeć żeńska',
+
+    // Health Monitoring
+    'Beats per minute'=>'Uderzenia na minutę',
+    'Blood group'=>'Grupa krwi',
+    'Blood pressure'=>'Ciśnienie krwi',
+    'Blood sugar'=>'Cukier we krwi',
+    'Cholesterol HDL'=>'Cholesterol HDL',
+    'Cholesterol DHL'=>'Cholesterol DHL',
+    'Height'=>'Wysokość',
+    'Waist'=>'Waist',
+    'Weight'=>'Waga',
+    'Temperature'=>'Temperatura',
+    'Select profile to monitor health'=>'Wybierz profil, aby monitorować stan',
 ];

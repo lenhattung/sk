@@ -46,6 +46,11 @@ $config = [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@app/messages',
                 ],
+                [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@kvdialog/messages',
+                    'forceTranslation' => true
+                ]
             ]
         ],
         'request' => [

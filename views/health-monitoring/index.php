@@ -9,14 +9,29 @@ use \app\models\Profile;
 <script>
     function changeProfile(){
        var value = $("#profile_id :selected").val();
-       alert(value);
-       window.location.href = "change-profile?id="+value;
+       // alert(value);
+       window.location.href = "<?php echo Url::base(true)?>/health-monitoring/change-profile?id="+value;
     }
 </script>
 <?php
-$profile = null;
-if (isset($_COOKIE['profileid'])) $profile = $_COOKIE['profileid'];
-if (isset($profile)) {
+$cookies = Yii::$app->request->cookies;
+$profile_id = -1;
+if ($cookies->get('profile_id')!=null) $profile_id = $cookies->get('profile_id')->value;
+?>
+<center>
+    <h4><?= \Yii::t('app', 'Monitoring health for') ?></h4>
+    <select class="form form-control" id="profile_id" onchange="changeProfile()">
+        <option value="-1"><?= \Yii::t('app', 'Select profile to monitor health') ?></option>
+        <?php
+        $profiles = Profile::find()->where("userid=" . Yii::$app->user->identity->getId())->all();
+        foreach ($profiles as $p) {
+            ?>
+            <option value="<?= $p->id ?>" <?=(($p->id==$profile_id)?'selected=\"selected\"':'')?>><?= $p->fullName ?></option>
+        <?php } ?>
+    </select>
+</center>
+<?php
+if (isset($profile_id)) {
     ?>
     <div class="container">
         <div class="row">
@@ -31,16 +46,5 @@ if (isset($profile)) {
         </div>
     </div>
 <?php } else { ?>
-    <center>
-        <h4><?= \Yii::t('app', 'Select profile to monitor health') ?></h4>
-        <select class="form form-control" id="profile_id" onchange="changeProfile()">
-            <option></option>
-            <?php
-            $profiles = Profile::find()->where("userid=" . Yii::$app->user->identity->getId())->all();
-            foreach ($profiles as $p) {
-                ?>
-                <option value="<?= $p->id ?>"><?= $p->fullName ?></option>
-            <?php } ?>
-        </select>
-    </center>
+
 <?php } ?>

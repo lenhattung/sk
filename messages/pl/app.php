@@ -7,6 +7,7 @@ return [
     'Add'=>'Dodaj',
     'You do not have permission to access this content!'=>'Nie masz pozwolenia na dostęp do tych treści!',
     'Are you sure you want to delete this item?'=>'Czy na pewno chcesz usunąć ten element?',
+    'Monitoring health for'=>'Monitorowanie stanu',
 
     // Layout
     'Home page'=>'Strona główna',

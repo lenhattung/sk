@@ -7,7 +7,7 @@ return [
     'Add'=>'Thêm',
     'You do not have permission to access this content!'=>'Bạn không thể truy cập nội dung này!',
     'Are you sure you want to delete this item?'=>'Bạn có chắc chắn xóa bỏ mục này không?',
-
+    'Monitoring health for'=>'Theo dõi sức khỏe của',
     // Layout
     'Home page'=>'Trang chủ',
     'About'=>'Giới thiệu',

@@ -77,7 +77,7 @@ AppAsset::register($this);
         ],
         'encodeLabels' => false,
         'options' => [
-            'class' => 'navbar-nav navbar-right'
+//            'class' => 'navbar-nav navbar-right'
         ],
     ]);
 

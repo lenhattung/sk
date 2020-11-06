@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=sk.titv.vn;dbname=pitaya_sk',
-    'username' => 'pitaya_sk',
-    'password' => 'iF@^1Cn^.143C1@',
+    'dsn' => 'mysql:host=sk.titv.vn;dbname=royaldoc',
+    'username' => 'root',
+    'password' => '',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
